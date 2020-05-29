@@ -1,0 +1,45 @@
+html, body
+{
+  background-color:#ffdd99;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.ip.input{
+width: 90%;
+padding: 10px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid rgb(4, 54, 119);
+box-sizing: border-box;
+}
+
+input{
+    width: 90%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid ;
+    box-sizing: border-box;
+}
+#sgpa1
+{
+  display:none;
+}
+#cgpa1
+{
+  display:none;
+}
+#perc
+{
+  display:none;
+}
+#grade
+{
+  display:none;
+}
+.disp
+{
+  font-size:20px;
+  font:bolder;
+}
