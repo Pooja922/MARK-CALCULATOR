@@ -9,10 +9,10 @@
     <script src="main.js"></script>
 </head>
   <div class="jumbotron text-center" style="background-color:#ffdd99;">
-    <h1>WELCOME VTU STUDENTS</h1>
+    <h2>WELCOME VTU STUDENTS</h2>
   </div>
   <div class="container text-center">
-    <h2>Click on following buttons to calculate</h2><br>
+    <h3>Click on following buttons to calculate</h3><br>
     <button type="button" class="btn btn-default btn-primary btn-lg" onclick="onclick_sgpa()">SGPA</button>
     <button type="button" class="btn btn-default  btn-primary btn-lg" onclick="onclick_cgpa()">CGPA</button>
     <button type="button" class="btn btn-default  btn-primary btn-lg" onclick="onclick_perc()">PERCENTAGE</button>
@@ -20,77 +20,78 @@
   </div>
   <br><br><br>
 <div id="sgpa1">
-  <div class="container">
+  <div class="container container1">
     <div class="row">
-        <h1>Here you can calculate your SGPA for 1-6 semester</h1>
-            <h2>   Click on the following buttons:<br>
-                MAIN: For adding main subject mark<br>
-                ELECTIVE: For adding elective subject mark<br>
-                LAB: For adding lab mark<br>
-                1 CREDIT : For adding mark of subject having 1 credit<br>
-            </h2>
+        <h3>Here you can calculate your SGPA for 1-6 semester</h3>
+            <h4>   Click on the following buttons:<br><br>
+                MAIN: For adding main subject mark<br><br>
+                ELECTIVE: For adding elective subject mark<br><br>
+                LAB: For adding lab mark<br><br>
+                1 CREDIT : For adding mark of subject having 1 credit<br><br>
+                Click on SGPA button to get your SGPA
+            </h4>
                 <button class="btn btn btn-info" onclick="onclick_msub()">MAIN</button>
                 <button class="btn btn btn-info" onclick="onclick_esub()">ELECTIVE</button>
                 <button class="btn btn btn-info" onclick="onclick_lab()">LAB</button>
                 <button class="btn btn btn-info" onclick="onclick_one_credit()">1 CREDIT</button><br><br>
-                <h2>Click on SGPA button to get your SGPA</h2>
-            <form id="lib" class="col-sm-4">
-                <div id="main_sub" class="disp">
+               
+            <form id="lib" class=" form1 ">
+                <div id="main_sub" class="disp container1">
                     Enter Main subject 1 Marks<br><input type="text" id="msub1">
                 </div>
-                <br><br><br><div id="ele_sub"></div>
-                <br><br><br><div id="lab"></div>
-                <br><br><br><div id="one_credit"></div>
+                <br><br><br><div class="disp container1" id="ele_sub"></div>
+                <br><br><br><div class="disp container1" id="lab"></div>
+                <br><br><br><div class="disp container1" id="one_credit"></div>
                 <br><button type="button" class="btn btn btn-info btn-lg" onclick="input()">SGPA</button><br>
-                <br><br><h3>YOUR SGPA IS</h3><div class="disp" id="res"></div>
+                <br><br><h4>YOUR SGPA IS</h4><div class="disp" id="res"></div>
             </form>
     </div>
     </div>
   </div>
 </div>
 <div id="cgpa1">
-  <div class="container">
+  <div class="container container1">
     <div class="row">
-  <h1>Here you can get your CGPA</h1>
-  <h2> Click on ADD SEM button to insert sgpa of a particular semester</h2>
-  <form id="lib2" class="col-sm-4">
-    <button class="btn btn btn-info" onclick="onclick_sem()">ADD SEM</button>
+  <h3>Here you can get your CGPA</h3>
+  <h4> Click on ADD SEM button to insert sgpa of a particular semester</h4>
+  <button class="btn btn btn-info" onclick="onclick_sem()">ADD SEM</button>
+  <form id="lib2" class="form1">
     <br><br>
-      <div id="sem" class="disp">
+      <div id="sem" class="disp container1">
           Enter SGPA of Sem 1<br><input type="text" id="sem1">
       </div>
       <br><button type="button" class="btn btn btn-info btn-lg" onclick="cgpa_calc()">CGPA</button><br>
-      <br><br><h3>YOUR CGPA IS</h3><div class="disp" id="cgpa">
+      <br><br><h4>YOUR CGPA IS</h4><div class="disp" id="cgpa">
       </div>
     </form>
 </div>
 </div>
 </div>
 <div id="perc">
-  <div class="container">
+  <div class="container container1">
     <div class="row">
-  <h1>Here you can get your PERCENTAGE</h1>
-  <form id="" class="col-sm-4">
-      <div id="" class="disp">
+  <h3>Here you can get your PERCENTAGE</h3>
+  <form id="" class="form1">
+      <div id="" class="disp container1">
           Enter CGPA<br><input type="text" id="">
       </div>
       <br><button type="button" class="btn btn btn-info btn-lg" onclick="">SUBMIT</button><br>
-      <br><br><h3>YOUR PERCENTAGE IS</h3><div class="disp" id="">
+      <br><br><h4>YOUR PERCENTAGE IS</h4><div class="disp" id="">
       </div>
   </form>
 </div>
 </div>
 </div>
 <div id="grade">
-  <div class="container">
+  <div class="container container1">
     <div class="row">
-  <h1>Here you can get your GRADE</h1>
-  <form id="" class="col-sm-4">
-      <div id="" class="disp">
+  <h3>Here you can get your GRADE</h3>
+  <form id="" class="form1">
+      <div id="" class="disp container1">
           Enter CGPA or SGPA<br><input type="text" id="">
       </div>
       <br><button type="button" class="btn btn btn-info btn-lg" onclick="">SUBMIT</button><br>
-      <br><br><h3>YOUR GRADE IS</h3><div class="disp" id="">
+      <br><br><h4>YOUR GRADE IS</h4><div class="disp" id="">
       </div>
   </form>
 </div>
@@ -98,4 +99,6 @@
 </div>
 </body>
 </html>
+
+
 
