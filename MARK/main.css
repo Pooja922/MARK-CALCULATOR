@@ -5,17 +5,8 @@ html, body
   background-attachment: fixed;
   background-size: 100% 100%;
 }
-.ip.input{
-width: 90%;
-padding: 10px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid rgb(4, 54, 119);
-box-sizing: border-box;
-}
-
 input{
-    width: 90%;
+    width: 20%;
     padding: 10px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -40,6 +31,14 @@ input{
 }
 .disp
 {
-  font-size:20px;
+  font-size:16px;
   font:bolder;
+}
+.container1
+{
+  text-align: center;
+  font:bolder;
+}
+.form1{
+  text-align: center;
 }
