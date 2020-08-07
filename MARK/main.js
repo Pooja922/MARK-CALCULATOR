@@ -92,7 +92,49 @@ function cgpa_calc(){
     cgpa = cgpa/count;
     document.getElementById("cgpa").innerHTML = cgpa;
 }
-
+function perc_calc(){
+    //Calculation of PERCENTAGE
+    var percent = 0;
+    var x = document.getElementById('lib3').value;
+    percent=(x-0.75)*10;
+    document.getElementById("percent").innerHTML = percent;
+}
+function grade_calc(){
+    //Calculation of GRADE
+    var gp = 0;
+    var g=NaN;
+    var x = document.getElementById('lib4').value;
+    if(x>=90){
+        gp=10;
+        g="S";
+    }
+    else if(x>=80 && x<90){
+        gp=9;
+        g="A";
+    }
+    else if(x>=70 && x<80){
+        gp=8;
+        g="B";
+    }
+    else if(x>=60 && x<70){
+        gp=7;
+        g="C";
+    }
+    else if(x>=50 && x<60){
+        gp=6;
+        g="D";
+    }
+    else if(x>=40 && x<50){
+        gp=5;
+        g="E";
+    }
+    else{
+        gp=0;
+        g="F";
+    }
+    document.getElementById("gp").innerHTML = gp;
+    document.getElementById("g").innerHTML = g;
+}
 function onclick_msub(){
     var newdiv = document.createElement('div');
 
@@ -143,6 +185,4 @@ function onclick_sem(){
 
         c++;
     }
-
-
 }
