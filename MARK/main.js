@@ -4,34 +4,7 @@ k = 1;
 m = 1;
 c = 2;
 //sem[] = {24,24,27,27,24,}
-function onclick_sgpa()
-{
-    document.getElementById("cgpa1").style.display="none";
-    document.getElementById("perc").style.display="none";
-    document.getElementById("grade").style.display="none";
-    document.getElementById("sgpa1").style.display="block";
-}
-function onclick_cgpa()
-{
-    document.getElementById("sgpa1").style.display="none";
-    document.getElementById("perc").style.display="none";
-    document.getElementById("grade").style.display="none";
-    document.getElementById("cgpa1").style.display="block";
-}
-function onclick_perc()
-{
-    document.getElementById("sgpa1").style.display="none";
-    document.getElementById("cgpa1").style.display="none";
-    document.getElementById("grade").style.display="none";
-    document.getElementById("perc").style.display="block";
-}
-function onclick_grade()
-{
-    document.getElementById("sgpa1").style.display="none";
-    document.getElementById("cgpa1").style.display="none";
-    document.getElementById("perc").style.display="none";
-    document.getElementById("grade").style.display="block";
-}
+
 function calc(x,c_p)
 {
     var res = 0;
@@ -96,7 +69,8 @@ function perc_calc(){
     //Calculation of PERCENTAGE
     var percent = 0;
     var x = document.getElementById('lib3').value;
-    percent=(x-0.75)*10;
+    if(x>0)
+        percent=(x-0.75)*10;
     document.getElementById("percent").innerHTML = percent;
 }
 function grade_calc(){
@@ -135,54 +109,69 @@ function grade_calc(){
     document.getElementById("gp").innerHTML = gp;
     document.getElementById("g").innerHTML = g;
 }
+function remove_msub(input) {
+    document.getElementById('main_sub').removeChild(input.parentNode);
+    i--;
+  }
 function onclick_msub(){
     var newdiv = document.createElement('div');
 
-    newdiv.innerHTML = "Enter Main subject " + i + " Marks <br><input type='text' id='msub'"+i+"'>";
-
+    newdiv.innerHTML = "Enter Main subject " + i + " Marks <br><input class='form-control form-control1' type='text' id='msub'"+i+"'>"+
+    "<input type='button' class='btn btn-warning'  value='X' onclick='remove_msub(this)' />";
     document.getElementById("main_sub").appendChild(newdiv);
 
     i++;
 }
-
+function remove_esub(input) {
+    document.getElementById('ele_sub').removeChild(input.parentNode);
+    j--;
+  }
 function onclick_esub(){
     var newdiv = document.createElement('div');
 
-    newdiv.innerHTML = "Enter Elective subject " + j + " Marks <br><input type='text' id='esub'"+j+"'>";
-
+    newdiv.innerHTML = "Enter Elective subject " + j + " Marks <br><input class='form-control form-control1' type='text' id='esub'"+j+"'>"+
+    "<input type='button'  class='btn btn-warning'  value='X' onclick='remove_esub(this)' />";
     document.getElementById("ele_sub").appendChild(newdiv);
 
     j++;
 }
-
+function remove_lab(input) {
+    document.getElementById('lab').removeChild(input.parentNode);
+    k--;
+  }
 function onclick_lab(){
     var newdiv = document.createElement('div');
 
-    newdiv.innerHTML = "Enter Lab " + k + " Marks <br><input type='text' id='esub'"+k+"'>";
-
+    newdiv.innerHTML = "Enter Lab " + k + " Marks <br><input class='form-control form-control1' type='text' id='lab'"+k+"'>"+
+    "<input type='button'  class='btn btn-warning'  value='X' onclick='remove_lab(this)' />";
     document.getElementById("lab").appendChild(newdiv);
 
     k++;
 }
-
+function remove_one(input) {
+    document.getElementById('one_credit').removeChild(input.parentNode);
+    m--;
+  }
 function onclick_one_credit(){
     var newdiv = document.createElement('div');
 
-    newdiv.innerHTML = "Enter subject " + m + " Marks <br><input type='text' id='esub'"+m+"'>";
-
+    newdiv.innerHTML = "Enter subject " + m + " Marks <br><input class='form-control form-control1' type='text' id='one'"+m+"'>"+
+    "<input type='button'  class='btn btn-warning'  value='X' onclick='remove_one(this)' />";
     document.getElementById("one_credit").appendChild(newdiv);
 
     m++;
 }
-
+function remove_sem(input) {
+    document.getElementById('sem').removeChild(input.parentNode);
+    c--;
+  }
 function onclick_sem(){
     if(c<=8){
         var newdiv = document.createElement('div');
 
-        newdiv.innerHTML = "Enter SGPA of Sem " + c + "<br><input type='text' id='sem'"+c+"'>";
-
+        newdiv.innerHTML = "Enter SGPA of Sem " + c + "<br><input class='form-control form-control1' type='text' id='sem'"+c+"'>"+
+        "<input type='button' class='btn btn-warning'  value='X' onclick='remove_sem(this)' />";
         document.getElementById("sem").appendChild(newdiv);
-
         c++;
     }
 }
