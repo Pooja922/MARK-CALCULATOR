@@ -7,98 +7,128 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
-  <div class="jumbotron text-center" style="background-color:#ffdd99;">
+<body>
+  <div class="text-center">
     <h2>WELCOME VTU STUDENTS</h2>
   </div>
-  <div class="container text-center">
-    <h3>Click on following buttons to calculate</h3><br>
-    <button type="button" class="btn btn-default btn-primary btn-lg" onclick="onclick_sgpa()">SGPA</button>
-    <button type="button" class="btn btn-default  btn-primary btn-lg" onclick="onclick_cgpa()">CGPA</button>
-    <button type="button" class="btn btn-default  btn-primary btn-lg" onclick="onclick_perc()">PERCENTAGE</button>
-    <button type="button" class="btn btn-default  btn-primary btn-lg" onclick="onclick_grade()">GRADE</button>
+  <div>
+    <h3 class="text-center">Here is a useful online calculator. Just enter your marks details and get your SGPA,CGPA,Percentage and Grade at ease.</h3>
+    <h3 class="text-center">Click on the following panels to get the details.</h2>
   </div>
-  <br><br><br>
-<div id="sgpa1">
-  <div class="container container1">
-    <div class="row">
-        <h3>Here you can calculate your SGPA for 1-6 semester</h3>
-            <h4>   Click on the following buttons:<br><br>
-                MAIN: For adding main subject mark<br><br>
-                ELECTIVE: For adding elective subject mark<br><br>
-                LAB: For adding lab mark<br><br>
-                1 CREDIT : For adding mark of subject having 1 credit<br><br>
-                Click on SGPA button to get your SGPA
-            </h4>
-                <button class="btn btn btn-info" onclick="onclick_msub()">MAIN</button>
-                <button class="btn btn btn-info" onclick="onclick_esub()">ELECTIVE</button>
-                <button class="btn btn btn-info" onclick="onclick_lab()">LAB</button>
-                <button class="btn btn btn-info" onclick="onclick_one_credit()">1 CREDIT</button><br><br>
-               
-            <form id="lib" class=" form1 ">
-                <div id="main_sub" class="disp container1">
-                    Enter Main subject 1 Marks<br><input type="text" id="msub1">
-                </div>
-                <br><br><br><div class="disp container1" id="ele_sub"></div>
-                <br><br><br><div class="disp container1" id="lab"></div>
-                <br><br><br><div class="disp container1" id="one_credit"></div>
-                <br><button type="button" class="btn btn btn-info btn-lg" onclick="input()">SGPA</button><br>
-                <br><br><h4>YOUR SGPA IS</h4><div class="disp" id="res"></div>
+<div class="container">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4 class="panel-title" rowspan="5">
+          <a data-toggle="collapse"  href="#sgpa1" aria-controls="sgpa1" aria-expanded="false" >SGPA</a>
+        </h4>
+      </div>
+      <div id="sgpa1"  class="panel-collapse collapse in">
+        <div class="panel-body">
+          <div class="container container1">
+            <div class="row">
+                    <h4>Click on the following buttons:<br><br>
+                        MAIN: For adding main subject mark<br><br>
+                        ELECTIVE: For adding elective subject mark<br><br>
+                        LAB: For adding lab mark<br><br>
+                        1 CREDIT : For adding mark of subject having 1 credit<br><br>
+                        Click on SGPA button to get your SGPA
+                    </h4>
+                        <button class="btn btn-warning" onclick="onclick_msub()">MAIN</button>
+                        <button class="btn btn-warning" onclick="onclick_esub()">ELECTIVE</button>
+                        <button class="btn btn-warning" onclick="onclick_lab()">LAB</button>
+                        <button class="btn btn-warning" onclick="onclick_one_credit()">1 CREDIT</button><br><br>
+                       
+                    <form id="lib" class=" form1 ">
+                        <div id="main_sub" class="disp container1">
+                            Enter Main subject 1 Marks<br><input type="text" id="msub1" class="form-control"><br><br>
+                        </div>
+                        <br><br><br><div class="disp container1" id="ele_sub"></div>
+                        <br><br><br><div class="disp container1" id="lab"></div>
+                        <br><br><br><div class="disp container1" id="one_credit"></div>
+                        <br><button type="button" class="btn btn-warning " onclick="input()">SGPA</button><br>
+                        <br><br><h4>Your SGPA Is</h4><div class="disp" id="res"></div>
+                    </form>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse"  href="#cgpa1" aria-controls="cgpa1" aria-expanded="false">CGPA</a>
+        </h4>
+      </div>
+      <div id="cgpa1" class="panel-collapse collapse">
+        <div class="panel-body"><div class="container container1">
+          <div class="row">
+            <h4> Click on ADD SEM button to insert sgpa of a particular semester</h4>
+            <button class="btn btn-warning" onclick="onclick_sem()">ADD SEM</button>
+            <form id="lib2" class="form1">
+              <br><br>
+              <div id="sem" class="disp container1 ">
+                  Enter SGPA of Sem 1<br><input type="text" id="sem1" class="form-control"><br><br>
+              </div>
+              <br><button type="button" class="btn btn-warning" onclick="cgpa_calc()">CGPA</button><br>
+              <br><br><h4>Your CGPA Is</h4><div class="disp" id="cgpa"></div>
             </form>
+          </div>
+        </div>
+      </div>
     </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#perc" aria-expanded="false" aria-controls="perc">PERCENTAGE</a>
+        </h4>
+      </div>
+      <div id="perc" class="panel-collapse collapse">
+        <div class="panel-body"><div class="container container1">
+          <div class="row">
+            <form class="form1">
+              <br><br>
+              <div  class="disp container1">
+                Enter Your CGPA<br><input type="text" id="lib3" class="form-control">
+              </div>
+              <br><button type="button" class="btn btn-warning" onclick="perc_calc()">SUBMIT</button><br>
+              <br><br><h4>Your Percentage Is</h4><div class="disp" id="percent"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#grade" aria-expanded="false" aria-controls="grade">GRADE</a>
+        </h4>
+      </div>
+      <div id="grade" class="panel-collapse collapse">
+        <div class="container container1">
+          <div class="row">
+            <form class="form1">
+            <br><br>
+            <div  class="disp container1">
+              Enter Your Percentage<br><input type="text" id="lib4" class="form-control">
+            </div>
+            <br><button type="button" class="btn btn-warning" onclick="grade_calc()">SUBMIT</button><br>
+            <br><br><h4>Your Grade Point Is</h4><div class="disp" id="gp"></div>
+            <br><br><h4>Your Grade Is</h4><div class="disp" id="g"></div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-<div id="cgpa1">
-  <div class="container container1">
-    <div class="row">
-  <h3>Here you can get your CGPA</h3>
-  <h4> Click on ADD SEM button to insert sgpa of a particular semester</h4>
-  <button class="btn btn btn-info" onclick="onclick_sem()">ADD SEM</button>
-  <form id="lib2" class="form1">
-    <br><br>
-      <div id="sem" class="disp container1">
-          Enter SGPA of Sem 1<br><input type="text" id="sem1">
-      </div>
-      <br><button type="button" class="btn btn btn-info btn-lg" onclick="cgpa_calc()">CGPA</button><br>
-      <br><br><h4>YOUR CGPA IS</h4><div class="disp" id="cgpa">
-      </div>
-    </form>
-</div>
-</div>
-</div>
-<div id="perc">
-  <div class="container container1">
-    <div class="row">
-  <h3>Here you can get your PERCENTAGE</h3>
-  <form class="form1">
-    <br><br>
-      <div  class="disp container1">
-          Enter Your CGPA<br><input type="text" id="lib3">
-      </div>
-      <br><button type="button" class="btn btn btn-info btn-lg" onclick="perc_calc()">SUBMIT</button><br>
-      <br><br><h4>YOUR PERCENTAGE IS</h4><div class="disp" id="percent"></div>
-    </div>
-  </form>
-</div>
-</div>
-</div>
-<div id="grade">
-  <div class="container container1">
-    <div class="row">
-  <h3>Here you can get your GRADE</h3>
-  <form class="form1">
-    <br><br>
-      <div  class="disp container1">
-          Enter Your PERCENTAGE<br><input type="text" id="lib4">
-      </div>
-  <br><button type="button" class="btn btn btn-info btn-lg" onclick="grade_calc()">SUBMIT</button><br>
-  <br><br><h4>YOUR GRADE POINT IS</h4><div class="disp" id="gp"></div>
-  <br><br><h4>YOUR GRADE IS</h4><div class="disp" id="g"></div>
-</div>
-</form>
-</div>
-</div>
 </div>
 </body>
 </html>
+
+
+
